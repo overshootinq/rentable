@@ -21,8 +21,8 @@ function Home(){
         return recentHouses.map((property) =>{
             return (
                 <div className="parent" key={property.img_url}>
-                    <div className="child">
-                        <img src={property.img_url} alt="large house" className=""/>
+                    <div >
+                        <img src={property.img_url} alt="large house" className="child"/>
                         <p className="">{property.property_type}</p>
                         <p className="">e-mail: {property.contact_info}</p>
                         <p className="">Price: ${property.price}</p>

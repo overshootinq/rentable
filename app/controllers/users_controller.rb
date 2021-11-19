@@ -17,17 +17,16 @@ class UsersController < ApplicationController
     end
 
     #rescue in create and find
-def index
-end
+    def index
+    end
 
-def loggingin
-end
+    def loggingin
 
-def logout
-end
+    end
 
-
-
+    def logout
+        
+    end
 
     private
 

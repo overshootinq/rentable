@@ -1,6 +1,22 @@
 function Search(){
+
+    function handleClick() {
+        console.log("clicked")
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        console.log("submitted")
+    }
+
     return(
-        <h1>Search</h1>
+        <div>
+            <h1>Search</h1>
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder="Search..." id="search"/>
+                <button id="search-button" type="button" onClick={handleClick}></button>
+            </form>
+        </div>
     )
 }
 

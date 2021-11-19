@@ -3,7 +3,7 @@
   flex-wrap: wrap;
 } */
 body {
-  background-color: rgba(255, 0, 106, 0.897);
+  background-color: rgba(0, 0, 0, 0.514);
 }
 /* .child {
   flex: 1 0 41%;
@@ -14,3 +14,22 @@ img {
 
 }
 
+#search {
+  /* margin-bottom: auto; */
+  /* margin-top: 20px; */
+  height: 50px;
+  width: 500px;
+  /* padding: 10px; */
+  border-radius: 5px;
+  background-color: white;
+}
+
+#search-button {
+  padding: 18px;
+  background: url(searchicon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50px;
+  width: 50px;
+  background-color: #222222;
+}

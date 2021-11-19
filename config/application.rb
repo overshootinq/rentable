@@ -20,9 +20,27 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 module Rentable
+  
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+
+    config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
+
+    # Adding back cookies and session middleware
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+
+    # Use SameSite=Strict for all cookies to help protect against CSRF
+    config.action_dispatch.cookies_same_site_protection = :strict
+
+    
+
 
     # Configuration for the application, engines, and railties goes here.
     #

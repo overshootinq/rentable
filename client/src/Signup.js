@@ -3,7 +3,7 @@ import { useState } from "react";
 function Signup({ setUser }) {
   const [username, setUsername] = useState([]);
   const [password, setPassword] = useState([]);
-  const [confPassword, setConfPassword] = useState([]);
+  const [password_confirmation, setPasswordConfirmation] = useState([]);
 
   function toggleShowPassword() {
     const password = document.querySelector("#password");
@@ -13,7 +13,7 @@ function Signup({ setUser }) {
   }
 
   function toggleShowPassword2() {
-    const password = document.querySelector("#password2");
+    const password = document.querySelector("#password_confirmation");
     const type =
     password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
@@ -21,12 +21,12 @@ function Signup({ setUser }) {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password, password_confirmation }),
     }).then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
@@ -69,7 +69,7 @@ function Signup({ setUser }) {
             style={{ display: 'block' }}
             required
           />
-          <label htmlFor="password">Password </label>
+          <label htmlFor="password_confirmation">Confirm Password </label>
           <i
             className="far fa-eye"
             id="togglePassword2"
@@ -78,11 +78,11 @@ function Signup({ setUser }) {
           />
           <input
             type="password"
-            value={confPassword}
+            value={password_confirmation}
             minLength="5"
             maxLength="15"
-            id="password2"
-            onChange={(event) => setConfPassword(event.target.value)}
+            id="password_confirmation"
+            onChange={(event) => setPasswordConfirmation(event.target.value)}
             style={{ display: 'block' }}
             required
           />

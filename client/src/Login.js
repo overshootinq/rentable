@@ -61,9 +61,9 @@ function Login({ setUser }) {
             onClick={toggleShowPassword}
             style={{ marginLeft: "-25px", cursor: "pointer" }}
           />
+          <button type="submit">Submit</button>
         </form>
       </div>
-      <button type="submit">Submit</button>
       <div className="nav-bar">
         <NavLink
           to="/Signup"

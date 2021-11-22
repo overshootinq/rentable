@@ -1,15 +1,21 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 
-function Login({ setUser }) {
-
+function Signup({ setUser }) {
   const [username, setUsername] = useState([]);
   const [password, setPassword] = useState([]);
+  const [confPassword, setConfPassword] = useState([]);
 
   function toggleShowPassword() {
     const password = document.querySelector("#password");
     const type =
-      password.getAttribute("type") === "password" ? "text" : "password";
+    password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+  }
+
+  function toggleShowPassword2() {
+    const password = document.querySelector("#password2");
+    const type =
+    password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
   }
 
@@ -30,7 +36,7 @@ function Login({ setUser }) {
 
   return (
     <div>
-      <h1>Login</h1>
+      <h1>Sign Up</h1>
       <div>
         <link
           rel="stylesheet"
@@ -44,8 +50,15 @@ function Login({ setUser }) {
             autoComplete="off"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
+            style={{ display: 'block' }}
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password </label>
+          <i
+            className="far fa-eye"
+            id="togglePassword"
+            onClick={toggleShowPassword}
+            style={{ cursor: "pointer"}}
+          />
           <input
             type="password"
             value={password}
@@ -53,31 +66,31 @@ function Login({ setUser }) {
             maxLength="15"
             id="password"
             onChange={(event) => setPassword(event.target.value)}
+            style={{ display: 'block' }}
             required
           />
+          <label htmlFor="password">Password </label>
           <i
             className="far fa-eye"
-            id="togglePassword"
-            onClick={toggleShowPassword}
-            style={{ marginLeft: "-25px", cursor: "pointer" }}
+            id="togglePassword2"
+            onClick={toggleShowPassword2}
+            style={{ cursor: "pointer"}}
           />
+          <input
+            type="password"
+            value={confPassword}
+            minLength="5"
+            maxLength="15"
+            id="password2"
+            onChange={(event) => setConfPassword(event.target.value)}
+            style={{ display: 'block' }}
+            required
+          />
+          <button type="submit">Submit</button>
         </form>
-      </div>
-      <button type="submit">Submit</button>
-      <div className="nav-bar">
-        <NavLink
-          to="/Signup"
-          exact
-          className="nav-bar-route"
-          activeStyle={{
-            background: "#235789",
-          }}
-        >
-          Signup
-        </NavLink>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Signup;

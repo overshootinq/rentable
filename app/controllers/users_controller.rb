@@ -6,8 +6,8 @@ class UsersController < ApplicationController
        if user.valid?
             session[:user_id]||=user.id 
             render json: user, status: :created
-       else
-            render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+        else
+        render json: { error: user.errors.full_messages }, status: :unprocessable_entity
         end 
     end
 
@@ -37,7 +37,6 @@ class UsersController < ApplicationController
     def user_params
         params.permit(:username, :password, :password_confirmation)
     end
-
 
 end
 

@@ -1,10 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 House.create(property_type: 'Crack House', address: '123 main Street, Redding, CA', beds: 0, baths: 6, price: 100, contact_info: 'notadrugdealer@drugs.com', img_url: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/St_Bernard_Crack_House.jpg')
 
@@ -17,6 +12,8 @@ House.create(property_type: 'Big ass mansion', address: '100 first ave, new york
 House.create(property_type: 'Slum Lord Manor', address: '12215 SW Oak Leaf Dr, Apt C420, Silver Spring, MD 20901
 ', beds: 1, baths: 0, price: 47, contact_info: 'Not_even_once@TheEnclave.com', img_url: 'https://i.pinimg.com/originals/58/b3/40/58b340936b2c1ed07bed66c260b00534.png')
 
+User.create(username: 'Bob', password_digest: 'testtest')
+
+User.create(username: 'testy', password_digest: 'purple')
 
 puts "Done seeding!"
-# User.create(username: 'testy', password_stuff: 'purple', user_id: 1)

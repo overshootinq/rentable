@@ -25,7 +25,6 @@ function NavBar() {
       >
         Home
       </NavLink>
-
       <NavLink
         to="/Search"
         exact

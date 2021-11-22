@@ -2,8 +2,11 @@
   display: flex;
   flex-wrap: wrap;
 } */
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 body {
   background-color: rgba(0, 0, 0, 0.514);
+  font-family: 'Outfit', sans-serif;
 }
 /* .child {
   flex: 1 0 41%;

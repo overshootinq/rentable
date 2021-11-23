@@ -9,9 +9,7 @@ const linkStyles = {
   justifyContent: "center",
   textAlign: "center",
   borderRadius: "8px",
-};
-
-const isLoggedIn = props.isLoggedIn
+}
 
 function NavBar() {
   return (
@@ -38,47 +36,6 @@ function NavBar() {
       >
         Search
       </NavLink>
-{/* ternary goes here for login/logout  and username */}
-{/* if sessions exists, display logout + username, else login */}
-      {(isLoggedIn)
-      ?   {<NavLink
-        to="/Logout" 
-        // ^logout?
-        exact
-        style={linkStyles}
-        className="nav-bar-route"
-        activeStyle={{
-          background: "#235789",
-        }}
-      >
-        Logout
-      </NavLink>}  
-      :   {      <NavLink
-        to="/Login"
-        exact
-        style={linkStyles}
-        className="nav-bar-route"
-        activeStyle={{
-          background: "#235789",
-        }}
-      >
-        Login
-      </NavLink>
-}}
-<NavLink
-        to="/Logout" 
-        // ^logout?
-        exact
-        style={linkStyles}
-        className="nav-bar-route"
-        activeStyle={{
-          background: "#235789",
-        }}
-      >
-        Logout
-      </NavLink>
-
-{/*  */}
       <NavLink
         to="/Login"
         exact
@@ -90,9 +47,8 @@ function NavBar() {
       >
         Login
       </NavLink>
-      {/* end of ternary */}
     </div>
-  );
+  )
 }
 
 export default NavBar;

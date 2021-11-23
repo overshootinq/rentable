@@ -23,9 +23,14 @@ function Login({ setUser }) {
       body: JSON.stringify({ username, password }),
     }).then((response) => {
       if (response.ok) {
-        response.json().then((user) => setUser(user));
+        response.json().then((user) => setUser(user))
+        .then(loginAlert);
       }
     });
+  }
+
+  function loginAlert() {
+    alert("you have logged in successfully")
   }
 
   return (
